@@ -1,0 +1,17 @@
+%h1 Companies
+= link_to "New", new_company_path
+%table.table
+  %thead
+    %tr
+      %th Name
+      %th Invoice count
+      %th Contact count
+      %th
+  - @companies.each do |company|
+    %tr
+      %td= company.name
+      %td= company.invoices.count
+      %td= company.contacts.count
+      %th
+        = link_to "Edit", edit_company_path(company)
+        = link_to "Destroy", company_path(company), data: { method: :delete }
