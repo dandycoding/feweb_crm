@@ -1,0 +1,14 @@
+!!!
+%html
+  %head
+    %title FewebCrm
+    = javascript_include_tag 'application'
+    = stylesheet_link_tag 'application', media: 'all'
+    = csrf_meta_tag
+  %body
+    .navbar.navbar-default.navbar-fixed-top{:role => "navigation"}
+      .container
+        .navbar-header
+          %a.navbar-brand{:href => "#"} Feweb Crm
+    .container
+      = yield
